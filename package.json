@@ -25,12 +25,43 @@
   "keywords": [
     "compute.io",
     "compute",
-    "computation"
+    "computation",
+    "distance",
+    "similarity",
+    "information theory",
+    "mathematics",
+    "math",
+    "array",
+    "dist",
+    "difference",
+    "minkowski",
+    "metric",
+    "vector",
+    "euclidean",
+    "manhattan",
+    "city block",
+    "rectilinear distance",
+    "norm",
+    "l1norm",
+    "l2norm",
+    "lpnorm",
+    "chebyshev",
+    "pairwise",
+    "distance matrix"
   ],
   "bugs": {
     "url": "https://github.com/compute-io/pdist/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "compute-chebyshev-distance": "^1.0.2",
+    "compute-euclidean-distance": "^1.0.0",
+    "compute-manhattan-distance": "^1.0.1",
+    "compute-minkowski-distance": "^1.0.0",
+    "validate.io-array-array": "^1.0.0",
+    "validate.io-function": "^1.0.2",
+    "validate.io-number-primitive": "^1.0.0",
+    "validate.io-object": "^1.0.3"
+  },
   "devDependencies": {
     "chai": "1.x.x",
     "mocha": "1.x.x",
