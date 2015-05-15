@@ -41,6 +41,36 @@ This method returns the distance between the `i`th and `j`th element of the orig
 #### .toMatrix()
 This method creates the full m x m distance matrix which holds the pairwise distances and zeros on the main diagonal.
 
+For object `arrays`, provide an accessor `function` for accessing `numeric` values.
+
+``` javascript
+var x = [
+	[1,2],
+	[2,4],
+	[3,5]
+];
+
+var y = [
+	[1,1],
+	[2,2],
+	[3,7]
+];
+
+function getValue( d, i ) {
+	return d[ 1 ];
+}
+
+var dist = minkowski( x, y, {
+	'accessor': getValue
+});
+// returns 3
+```
+
+The accessor `function` is provided two arguments:
+
+-	__d__: current datum.
+-	__i__: current datum index.
+
 ## Examples
 
 ``` javascript

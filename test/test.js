@@ -121,6 +121,30 @@ describe( 'compute-pdist', function tests() {
 		}
 	});
 
+
+	it( 'should throw an error if provided an accessor option which is not a function', function test() {
+		var values = [
+			'5',
+			5,
+			true,
+			undefined,
+			null,
+			NaN,
+			{},
+			[]
+		];
+		for ( var i = 0; i < values.length; i++ ) {
+			expect( badValue( values[i] ) ).to.throw( TypeError );
+		}
+		function badValue( value ) {
+			return function() {
+				pdist( [[2,3,4], [3,4,5]], {
+					'accessor': value
+				});
+			};
+		}
+	});
+
 	it( 'should compute the pairwise distances', function test() {
 
 		var i, j, d, X;
@@ -215,6 +239,47 @@ describe( 'compute-pdist', function tests() {
 
 			}
 		}
+
+	});
+
+	it( 'should compute the cosine distance using an accessor function', function test() {
+		var X, expected, actual;
+
+		X = [
+			[
+				[1,2],
+				[2,4],
+				[3,5],
+				[4,3],
+				[5,8],
+				[6,2]
+			],
+			[
+				[1,3],
+				[2,1],
+				[3,5],
+				[4,3],
+				[5,7],
+				[6,2]
+			]
+		];
+
+		// Cosine Distance
+
+		actual = pdist( X, { 'accessor': getValue, 'distance':'cosine' } ).get( 0, 1 );
+		expected = cosine( X[0], X[1], getValue );
+		assert.closeTo( actual, expected, 1e-7 );
+
+		// Minkowski distance
+		actual = pdist( X, { 'accessor': getValue, 'distance': 'minkowski', 'p': 3 } ).get( 0, 1 );
+		expected = minkowski( X[0], X[1], { 'p': 3,'accessor': getValue } );
+		assert.closeTo( actual, expected, 1e-7 );
+
+		function getValue( d, i ) {
+			return d[ 1 ];
+		}
+
+
 
 	});
 
