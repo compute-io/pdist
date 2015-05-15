@@ -27,10 +27,12 @@ This function by default computes distances between pairs of elements of input a
 The function accepts the following `options`:
 
 *	__distance__: distance to calculate, either
-		- `euclidean` (default)
-		- `chebyshev`
-		- `manhattan`
-		- `minkowski`
+		[euclidean](https://github.com/compute-io/euclidean-distance) (default),
+		[cosine](https://github.com/compute-io/cosine-distance),
+		[chebyshev](https://github.com/compute-io/chebyshev-distance),
+		[manhattan](https://github.com/compute-io/manhattan-distance),
+		[minkowski](https://github.com/compute-io/minkowski-distance)
+*	__accessor__: accessor function for accessing `array` values.
 *	__p__: norm order (`p > 0`) if `minkowski distance` is used.
 
 The returned array which holds all the pairwise distances is of length `m(m–1)/2`, where `m` is the number of elements in `X`. It holds the elements of the lower left triangle of the m-by-m distance matrix in column order. The returned array comes with two helper methods:
