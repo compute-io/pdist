@@ -54,11 +54,11 @@
   },
   "dependencies": {
     "compute-chebyshev-distance": "^1.0.2",
+    "compute-cosine-distance": "^1.0.0",
     "compute-euclidean-distance": "^1.0.0",
     "compute-manhattan-distance": "^1.0.1",
     "compute-minkowski-distance": "^1.0.0",
     "validate.io-array-array": "^1.0.0",
-    "validate.io-function": "^1.0.2",
     "validate.io-number-primitive": "^1.0.0",
     "validate.io-object": "^1.0.3",
     "validate.io-string-primitive": "^1.0.0"

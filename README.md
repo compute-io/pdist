@@ -56,6 +56,13 @@ var X = [
 
 var d = pdist( X );
 // returns [ 2.449, 9.899, .. ]
+
+// distance between element 0 and 2:
+d.get( 0, 2 );
+// returns 9.899
+
+// distance matrix:
+var dMat = .toMatrix();
 ```
 
 To run the example code from the top-level application directory,
