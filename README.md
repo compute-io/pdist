@@ -62,7 +62,7 @@ d.get( 0, 2 );
 // returns 9.899
 
 // distance matrix:
-var dMat = .toMatrix();
+var dMat = d.toMatrix();
 ```
 
 To run the example code from the top-level application directory,
