@@ -2,7 +2,7 @@ pdist
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Computes pairwise distances between sequences 
+> Computes pairwise distances between sequences
 
 
 ## Installation
@@ -17,18 +17,45 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var foo = require( 'compute-pdist' );
+var pdist = require( 'compute-pdist' );
 ```
 
-#### foo( arr )
+#### pdist( X[, options] )
 
-What does this function do?
+This function by default computes distances between pairs of elements of input array `X`. It returns an array holding the pairwise distances between the elements of `X`.
 
+The function accepts the following `options`:
+
+*	__distance__: distance to calculate, either
+		- `euclidean` (default)
+		- `chebyshev`
+		- `manhattan`
+		- `minkowski`
+*	__p__: norm order (`p > 0`) if `minkowski distance` is used.
+
+The returned array which holds all the pairwise distances is of length `m(m–1)/2`, where `m` is the number of elements in `X`. It holds the elements of the lower left triangle of the m-by-m distance matrix in column order. The returned array comes with two helper methods:
+
+#### .get( i, j )
+This method returns the distance between the `i`th and `j`th element of the orignal input `X`.
+
+#### .toMatrix()
+This method creates the full m x m distance matrix which holds the pairwise distances and zeros on the main diagonal.
 
 ## Examples
 
 ``` javascript
-var foo = require( 'compute-pdist' );
+var pdist = require( 'compute-pdist' );
+
+var X = [
+	[ 2, 4, 3, 1],
+	[ 1, 2, 2, 1],
+	[ 7, 3, 9, 7],
+	[ 11, 9, 9, 8],
+	[ 3, 2, 3, 1]
+];
+
+var d = pdist( X );
+// returns [ 2.449, 9.899, .. ]
 ```
 
 To run the example code from the top-level application directory,
@@ -69,12 +96,12 @@ $ make view-cov
 ---
 ## License
 
-[MIT license](http://opensource.org/licenses/MIT). 
+[MIT license](http://opensource.org/licenses/MIT).
 
 
 ## Copyright
 
-Copyright &copy; 2015. Philipp Burckhardt.
+Copyright &copy; 2014-2015. The Compute.io Authors.
 
 
 [npm-image]: http://img.shields.io/npm/v/compute-pdist.svg
