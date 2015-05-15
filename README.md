@@ -44,23 +44,23 @@ This method creates the full m x m distance matrix which holds the pairwise dist
 For object `arrays`, provide an accessor `function` for accessing `numeric` values.
 
 ``` javascript
-var x = [
-	[1,2],
-	[2,4],
-	[3,5]
-];
-
-var y = [
-	[1,1],
-	[2,2],
-	[3,7]
+var X = [
+		[1,2],
+		[2,4],
+		[3,5]
+	],
+	[
+		[1,1],
+		[2,2],
+		[3,7]
+	]
 ];
 
 function getValue( d, i ) {
 	return d[ 1 ];
 }
 
-var dist = minkowski( x, y, {
+var dist = pdist( X, {
 	'accessor': getValue
 });
 // returns 3
