@@ -33,13 +33,12 @@ The function accepts the following `options`:
 		- `minkowski`
 *	__p__: norm order (`p > 0`) if `minkowski distance` is used.
 
-The returned array which holds all the pairwise distances is of length `m(m–1)/2`, where `m` is the number of elements in `X`. It holds the elements of the lower left triangle of the m-by-m distance matrix in column order. The returned array comes with two helper methods:
+The returned array which holds all the pairwise distances is of length `m(m–1)/2`, where `m` is the number of elements in `X`. It holds the elements of the lower left triangle of the m-by-m distance matrix in column order. The returned array comes with a helper method to extract the (i, j) element of the corresponding distance matrix:
 
 #### .get( i, j )
 This method returns the distance between the `i`th and `j`th element of the orignal input `X`.
 
-#### .toMatrix()
-This method creates the full m x m distance matrix which holds the pairwise distances and zeros on the main diagonal.
+To obtain the full distance matrix, use the `squareform` function.
 
 For object `arrays`, provide an accessor `function` for accessing `numeric` values.
 

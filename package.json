@@ -53,6 +53,7 @@
     "url": "https://github.com/compute-io/pdist/issues"
   },
   "dependencies": {
+    "compute-canberra-distance": "^1.0.0",
     "compute-chebyshev-distance": "^1.0.2",
     "compute-cosine-distance": "^1.0.0",
     "compute-euclidean-distance": "^1.0.0",
@@ -65,17 +66,12 @@
     "validate.io-string-primitive": "^1.0.0"
   },
   "devDependencies": {
-    "chai": "1.x.x",
-    "mocha": "1.x.x",
+    "chai": "2.x.x",
+    "mocha": "2.x.x",
     "coveralls": "^2.11.1",
     "istanbul": "^0.3.0",
     "jshint": "2.x.x",
     "jshint-stylish": "^1.0.0"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://www.opensource.org/licenses/MIT"
-    }
-  ]
+  "license": "MIT"
 }
