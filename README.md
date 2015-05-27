@@ -28,6 +28,7 @@ The function accepts the following `options`:
 
 *	__distance__: distance to calculate, either
 		[euclidean](https://github.com/compute-io/euclidean-distance) (default),
+		[canberra](https://github.com/compute-io/canberra-distance)
 		[cosine](https://github.com/compute-io/cosine-distance),
 		[chebyshev](https://github.com/compute-io/chebyshev-distance),
 		[manhattan](https://github.com/compute-io/manhattan-distance),
